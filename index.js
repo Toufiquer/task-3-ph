@@ -79,3 +79,181 @@ const getIndexSum = (arr, num) => {
   }
 };
 // console.log(getIndexSum([1, 3, 6, 8, 11, 15], 25), " => Line No: 79");
+
+// * Task 5: Implement a simple JavaScript calculator. The calculator should take two numbers and an operator (+, -, *, /) as input and return the result of the operation.
+const getOperation = (num1 = 0, num2 = 0, operator) => {
+  if (operator === "+") {
+    return num1 + num2;
+  } else if (operator === "-") {
+    return num1 - num2;
+  } else if (operator === "*") {
+    return num1 * num2;
+  } else if (operator === "/") {
+    return num1 / num2;
+  } else {
+    return "please input a valid operator (+,-,*,/)";
+  }
+};
+// console.log(getOperation(3, 2, "/"), " => Line No: 98");
+
+// * Task 6: Create a program that generates a random password of a specified length. The password should include a mix of uppercase letters, lowercase letters, numbers, and special characters.
+const generatesPassword = () => {
+  const getRandomNum = (len = 10) => parseInt(Math.random() * len); // return 0-9 || (100)=> 0-99
+  const capitalLetter = [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H",
+    "I",
+    "J",
+    "K",
+    "L",
+    "M",
+    "N",
+    "O",
+    "P",
+    "Q",
+    "R",
+    "S",
+    "T",
+    "U",
+    "V",
+    "W",
+    "X",
+    "Y",
+    "Z",
+  ];
+  const smallLetter = [
+    "a",
+    "b",
+    "c",
+    "d",
+    "e",
+    "f",
+    "g",
+    "h",
+    "i",
+    "j",
+    "k",
+    "l",
+    "m",
+    "n",
+    "o",
+    "p",
+    "q",
+    "r",
+    "s",
+    "t",
+    "u",
+    "v",
+    "w",
+    "x",
+    "y",
+    "z",
+  ];
+  const symbols = ["@", "#", "$", "%", "&", "*", "?", "!", ".", ",", ";", ":"];
+
+  // 0 for CapitalLetter, 1 for SmallLetter, 2 for Symbols, and 3 for Numbers
+  const sorted = [
+    "0123",
+    "0132",
+    "0213",
+    "0231",
+    "0312",
+    "0321",
+    "1023",
+    "1032",
+    "1203",
+    "1230",
+    "1302",
+    "1320",
+    "2013",
+    "2031",
+    "2103",
+    "2130",
+    "2301",
+    "2310",
+    "3012",
+    "3021",
+    "3102",
+    "3120",
+    "3201",
+    "3210",
+  ];
+  const getCapitalLetter = () => {
+    // get a random number
+    const rand = getRandomNum(100);
+    if (rand < 26) {
+      return capitalLetter[rand];
+    } else {
+      return getCapitalLetter();
+    }
+  };
+  const getSmallLetter = () => {
+    // get a random number
+    const rand = getRandomNum(100);
+    if (rand < 26) {
+      return smallLetter[rand];
+    } else {
+      return getSmallLetter();
+    }
+  };
+  const getSymbol = () => {
+    // get a random number
+    const rand = getRandomNum(100);
+    if (rand < 11) {
+      return symbols[rand];
+    } else {
+      return getSymbol();
+    }
+  };
+  // 0 for CapitalLetter, 1 for SmallLetter, 2 for Symbols, and 3 for Numbers
+  const getSorted = () => {
+    // get a random number
+    const rand = getRandomNum(100);
+    if (rand < 23) {
+      return sorted[rand];
+    } else {
+      return getSorted();
+    }
+  };
+  const sortedList = getSorted();
+  const sortedList1 = getSorted();
+  const sortedList2 = getSorted();
+  const getRandomDigit = (num) => {
+    // 0 for CapitalLetter, 1 for SmallLetter, 2 for Symbols, and 3 for Numbers
+    if (parseInt(num) === 0) {
+      return getCapitalLetter();
+    } else if (parseInt(num) === 1) {
+      return getSmallLetter();
+    } else if (parseInt(num) === 2) {
+      return getSymbol();
+    } else {
+      return getRandomNum();
+    }
+  };
+  //  this will return 12 length of password
+  return [
+    getRandomDigit(sortedList[0]),
+    getRandomDigit(sortedList[1]),
+    getRandomDigit(sortedList[2]),
+    getRandomDigit(sortedList[3]),
+    getRandomDigit(sortedList1[0]),
+    getRandomDigit(sortedList1[1]),
+    getRandomDigit(sortedList1[2]),
+    getRandomDigit(sortedList1[3]),
+    getRandomDigit(sortedList2[0]),
+    getRandomDigit(sortedList2[1]),
+    getRandomDigit(sortedList2[2]),
+    getRandomDigit(sortedList2[3]),
+  ].join("");
+};
+// console.log(generatesPassword(), " => Out put");
+
+
+
+// * Task 7: Implement a function that converts a Roman numeral to an integer. The function should take a Roman numeral string (e.g., "IX" or "XXI") as input and return the corresponding integer value.
