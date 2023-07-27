@@ -11,12 +11,14 @@ const textReverse = (text) => {
     return reverseText;
   }
 };
-// console.log(textReverse("hello world"), " => Question 1");
+console.log(textReverse("hello world"), " => Question 1");
+
+
+
 
 // * Task 2 : Create a function that takes an array of numbers as input and returns the sum of all positive numbers in the array.
 // & Example Input: [2, -5, 10, -3, 7] Example Output: 19
 const sumPositive = (arr) => {
-  console.log(Array.isArray(arr), " => Line No: 21");
   const result = Array.isArray(arr)
     ? arr.reduce((acu, curr) => {
         return curr >= 0 ? acu + curr : acu + 0;
@@ -24,7 +26,10 @@ const sumPositive = (arr) => {
     : "Please input a number of array";
   return result;
 };
-// console.log(sumPositive([2, -5, 10, -3, 7]), " => Question 2");
+console.log(sumPositive([2, -5, 10, -3, 7]), " => Question 2");
+
+
+
 
 // * Task 3: Write a JavaScript program to find the most frequent element in an array and return it.
 // & Example Input: [3, 5, 2, 5, 3, 3, 1, 4, 5] Example Output: 3
@@ -52,7 +57,10 @@ const mostFrequent = (arr) => {
     return "please input a valid number of array";
   }
 };
-// console.log(mostFrequent([3, 5, 2, 5, 3, 3, 1, 4, 5]), " => Line No: 46");
+console.log(mostFrequent([3, 5, 2, 5, 3, 3, 1, 4, 5]), " => Question 3");
+
+
+
 
 // * Task 4: Create a function that takes a sorted array of numbers and a target value as input. The function should find two numbers in the array that add up to the target value. Return an array containing the indices of the two numbers.
 
@@ -78,7 +86,10 @@ const getIndexSum = (arr, num) => {
       : ["Ops! Nothing was found"];
   }
 };
-// console.log(getIndexSum([1, 3, 6, 8, 11, 15], 25), " => Line No: 79");
+console.log(getIndexSum([1, 3, 6, 8, 11, 15], 9), " => Question 4");
+
+
+
 
 // * Task 5: Implement a simple JavaScript calculator. The calculator should take two numbers and an operator (+, -, *, /) as input and return the result of the operation.
 const getOperation = (num1 = 0, num2 = 0, operator) => {
@@ -94,7 +105,10 @@ const getOperation = (num1 = 0, num2 = 0, operator) => {
     return "please input a valid operator (+,-,*,/)";
   }
 };
-// console.log(getOperation(3, 2, "/"), " => Line No: 98");
+console.log(getOperation(3, 2, "/"), " => Question 5");
+
+
+
 
 // * Task 6: Create a program that generates a random password of a specified length. The password should include a mix of uppercase letters, lowercase letters, numbers, and special characters.
 const generatesPassword = () => {
@@ -252,10 +266,12 @@ const generatesPassword = () => {
     getRandomDigit(sortedList2[3]),
   ].join("");
 };
-// console.log(generatesPassword(), " => Out put");
+console.log(generatesPassword(), " => Question 6");
+
+
+
 
 // * Task 7: Implement a function that converts a Roman numeral to an integer. The function should take a Roman numeral string (e.g., "IX" or "XXI") as input and return the corresponding integer value.
-
 const romanToInt = (romNum) => {
   const romanN = ["i", "I", "v", "V", "x", "X", "c", "C", "l", "L", "m", "M"];
   for (let i = 0; i < romNum.length - 1; i++) {
@@ -290,4 +306,4 @@ const romanToInt = (romNum) => {
   }
   return value;
 };
-console.log(romanToInt("xxX"), " => Line No: 288");
+console.log(romanToInt("xxX"), " => Question 7");
