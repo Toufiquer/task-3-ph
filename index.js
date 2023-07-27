@@ -254,6 +254,40 @@ const generatesPassword = () => {
 };
 // console.log(generatesPassword(), " => Out put");
 
-
-
 // * Task 7: Implement a function that converts a Roman numeral to an integer. The function should take a Roman numeral string (e.g., "IX" or "XXI") as input and return the corresponding integer value.
+
+const romanToInt = (romNum) => {
+  const romanN = ["i", "I", "v", "V", "x", "X", "c", "C", "l", "L", "m", "M"];
+  for (let i = 0; i < romNum.length - 1; i++) {
+    if (!romanN.includes(romNum[i])) {
+      return "please provide a valid roman Number";
+    }
+  }
+  // roman number and value
+  const romNumValue = {
+    i: 1,
+    I: 1,
+    v: 5,
+    V: 5,
+    x: 10,
+    X: 10,
+    c: 50,
+    C: 50,
+    l: 100,
+    L: 100,
+    m: 500,
+    M: 500,
+  };
+  let value = 0;
+  for (let i = 0; i < romNum.length; i++) {
+    const currentValue = romNumValue[romNum[i]];
+    const nextValue = romNumValue[romNum[i + 1]] || 0;
+    if (currentValue < nextValue) {
+      value -= currentValue;
+    } else {
+      value += currentValue;
+    }
+  }
+  return value;
+};
+console.log(romanToInt("xxX"), " => Line No: 288");
