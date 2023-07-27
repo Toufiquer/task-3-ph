@@ -13,9 +13,6 @@ const textReverse = (text) => {
 };
 console.log(textReverse("hello world"), " => Question 1");
 
-
-
-
 // * Task 2 : Create a function that takes an array of numbers as input and returns the sum of all positive numbers in the array.
 // & Example Input: [2, -5, 10, -3, 7] Example Output: 19
 const sumPositive = (arr) => {
@@ -27,9 +24,6 @@ const sumPositive = (arr) => {
   return result;
 };
 console.log(sumPositive([2, -5, 10, -3, 7]), " => Question 2");
-
-
-
 
 // * Task 3: Write a JavaScript program to find the most frequent element in an array and return it.
 // & Example Input: [3, 5, 2, 5, 3, 3, 1, 4, 5] Example Output: 3
@@ -59,9 +53,6 @@ const mostFrequent = (arr) => {
 };
 console.log(mostFrequent([3, 5, 2, 5, 3, 3, 1, 4, 5]), " => Question 3");
 
-
-
-
 // * Task 4: Create a function that takes a sorted array of numbers and a target value as input. The function should find two numbers in the array that add up to the target value. Return an array containing the indices of the two numbers.
 
 // & Example Input: ([1, 3, 6, 8, 11, 15], 9) Example Output: [1, 2] (numbers at indices 1 and 2: 3 + 6 = 9)
@@ -88,9 +79,6 @@ const getIndexSum = (arr, num) => {
 };
 console.log(getIndexSum([1, 3, 6, 8, 11, 15], 9), " => Question 4");
 
-
-
-
 // * Task 5: Implement a simple JavaScript calculator. The calculator should take two numbers and an operator (+, -, *, /) as input and return the result of the operation.
 const getOperation = (num1 = 0, num2 = 0, operator) => {
   if (operator === "+") {
@@ -106,9 +94,6 @@ const getOperation = (num1 = 0, num2 = 0, operator) => {
   }
 };
 console.log(getOperation(3, 2, "/"), " => Question 5");
-
-
-
 
 // * Task 6: Create a program that generates a random password of a specified length. The password should include a mix of uppercase letters, lowercase letters, numbers, and special characters.
 const generatesPassword = () => {
@@ -267,9 +252,6 @@ const generatesPassword = () => {
   ].join("");
 };
 console.log(generatesPassword(), " => Question 6");
-
-
-
 
 // * Task 7: Implement a function that converts a Roman numeral to an integer. The function should take a Roman numeral string (e.g., "IX" or "XXI") as input and return the corresponding integer value.
 const romanToInt = (romNum) => {
