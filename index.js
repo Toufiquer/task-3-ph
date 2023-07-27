@@ -53,3 +53,29 @@ const mostFrequent = (arr) => {
   }
 };
 // console.log(mostFrequent([3, 5, 2, 5, 3, 3, 1, 4, 5]), " => Line No: 46");
+
+// * Task 4: Create a function that takes a sorted array of numbers and a target value as input. The function should find two numbers in the array that add up to the target value. Return an array containing the indices of the two numbers.
+
+// & Example Input: ([1, 3, 6, 8, 11, 15], 9) Example Output: [1, 2] (numbers at indices 1 and 2: 3 + 6 = 9)
+
+const getIndexSum = (arr, num) => {
+  if (!Array.isArray(arr)) {
+    return "Please input a valid array";
+  } else if (!(typeof num === "number")) {
+    return "Please input a valid number";
+  } else {
+    const result = {};
+    for (let i = 0; i < arr.length; i++) {
+      arr.forEach((curr) => {
+        if (curr + arr[i] === parseInt(num)) {
+          result.firstIndex = curr;
+          result.secondIndex = i;
+        }
+      });
+    }
+    return result.firstIndex
+      ? [result.firstIndex, result.secondIndex]
+      : ["Ops! Nothing was found"];
+  }
+};
+// console.log(getIndexSum([1, 3, 6, 8, 11, 15], 25), " => Line No: 79");
